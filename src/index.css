@@ -1,0 +1,125 @@
+:root {
+  --name: down;
+  --duration: 30s;
+  --play-state: paused;
+  --themeClr: hsl(359, 60%, 65%);
+  --invert: 1;
+  --from: 0%;
+  --code-font: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  background: #fff;
+}
+body {
+  overscroll-behavior-y: contain;
+}
+#main {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#settings {
+  height: 100vh;
+  padding-top: 1rem;
+}
+
+#display {
+  font-family: var(--code-font);
+  user-select: none;
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(3rem, 23vw, 9rem);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--themeClr);
+  filter: invert(var(--invert));
+  mix-blend-mode: difference;
+}
+#main::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  /* height: 200%;
+  width: 100%;
+  bottom: -50%;
+  left: -50%; */
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  /* border-radius: 40%; */
+  /*
+  Firefox doesn't handle transform transitions smooth!
+  so even if top causes to repaint, no other way than going with some repainting!
+  will-change may help?
+  */
+  transform: translateY(var(--from));
+  will-change: transform;
+  background-color: var(--themeClr);
+  /* animation-duration: var(--duration);
+  animation-name: var(--name);
+  animation-timing-function: linear;
+  animation-play-state: var(--play-state);
+  animation-fill-mode: both;
+  animation-delay: 1s; */
+  transition: transform 1000ms linear;
+  /* animation: rotate 6s linear infinite; */
+}
+.time-input {
+  display: flex;
+  justify-content: space-evenly;
+}
+.set-longbreak {
+  display: flex;
+  justify-content: space-between;
+}
+.autoBreak,
+.autoStart,
+.themeMode {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.autoBreak {
+  margin-bottom: 0.5rem;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes down {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+@keyframes up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+@keyframes default {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
