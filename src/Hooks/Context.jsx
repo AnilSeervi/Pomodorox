@@ -1,11 +1,10 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 const logo = "Pomodorox";
 
 const timerContext = React.createContext({});
 const root = document.documentElement;
 const Context = ({ children }) => {
-  const streak = useRef(0);
   const [time, setTime] = useState({
     focus: 1500,
     shortbreak: 300,
@@ -20,7 +19,7 @@ const Context = ({ children }) => {
   const [autoBreak, setAutoBreak] = useState(false);
   const [autoStart, setAutoStart] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(1);
   useEffect(() => {
     setDisplayTime({ ...time });
   }, [time]);
@@ -46,7 +45,6 @@ const Context = ({ children }) => {
         setAutoStart,
         counter,
         setCounter,
-        streak,
         logo,
       }}
     >

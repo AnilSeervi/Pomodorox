@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Typography from "@material-ui/core/Typography";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 import ToggleButton from "@material-ui/lab/ToggleButton";
@@ -7,7 +7,10 @@ import Brightness4Icon from "@material-ui/icons/Brightness4";
 import { useTimerContext } from "../Hooks/Context";
 
 const ThemeMode = () => {
-  const { dark, setDark } = useTimerContext();
+  const { dark, setDark, root } = useTimerContext();
+  useEffect(() => {
+    root.style.setProperty("--invert", `${dark ? 0 : 1}`);
+  }, [dark]);
   const handleThemeModeChange = (e, newValue) => {
     if (newValue !== null) {
       setDark(!!parseInt(newValue));

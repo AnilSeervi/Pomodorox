@@ -1,18 +1,16 @@
 import React from "react";
 import Timer from "../Components/Timer";
-import useSwipe from "../Helpers/useSwipe";
-import FloatingBtn from "../Components/FloatingBtn";
-import Streak from "../Components/Streak";
+import Settings from "./Settings";
+import Controls from "../Components/Controls";
 
 const Home = () => {
-  useSwipe();
   return (
     <>
       <main id="main" data-swipe-threshold="100">
         <Timer />
       </main>
-      <Streak />
-      <FloatingBtn />
+      <Settings />
+      <Controls />
     </>
   );
 };
