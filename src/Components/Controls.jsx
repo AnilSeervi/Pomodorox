@@ -54,7 +54,7 @@ const Controls = () => {
   const handleReset = useCallback(() => {
     setDisplayTime({ ...time });
     setIsPlaying(false);
-  }, []);
+  }, [time]);
   const handlePlayPause = useCallback(() => {
     setIsPlaying((c) => !c);
   }, []);
