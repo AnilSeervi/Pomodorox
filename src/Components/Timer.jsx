@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useLayoutEffect } from "react";
 import { getTime } from "../Helpers/getTime";
 import useInterval from "../Hooks/useInterval";
 import { useTimerContext } from "../Hooks/Context";
+import { useSoundContext } from "../Hooks/Sound";
 import DisplayTime from "./DisplayTime";
 
 const Timer = () => {
@@ -21,18 +22,22 @@ const Timer = () => {
     autoBreak,
     logo,
   } = useTimerContext();
+  const { sound } = useSoundContext();
 
   useLayoutEffect(() => {
     if (displayTime.focus < 0) {
+      sound.play();
       if (counter === longBreakInt) {
         setTimerState("longbreak");
       } else setTimerState("shortbreak");
     }
     if (displayTime.shortbreak < 0) {
+      sound.play();
       setTimerState("focus");
       setCounter((c) => c + 1);
     }
     if (displayTime.longbreak < 0) {
+      sound.play();
       setCounter(1);
       setTimerState("focus");
     }

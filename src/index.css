@@ -34,6 +34,7 @@ html {
   mix-blend-mode: difference;
 }
 #display_counter {
+  user-select: none;
   color: var(--themeClr);
   filter: invert(var(--invert));
   mix-blend-mode: difference;
@@ -68,4 +69,14 @@ html {
 }
 .autoBreak {
   margin-bottom: 0.5rem;
+}
+.notify-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.volume-slider {
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
 }

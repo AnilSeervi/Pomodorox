@@ -16,6 +16,8 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import Notification from "../Components/Notification";
+import Volume from "../Components/Volume";
 
 const useStyles = makeStyles((theme) => ({
   iconButton: {
@@ -94,6 +96,8 @@ const Settings = () => {
             <Divider classes={{ root: classes.divider }} />
             <ThemeMode />
             <Divider classes={{ root: classes.divider }} />
+            <Notification />
+            <Volume />
           </DialogContentText>
         </DialogContent>
         <DialogActions>
