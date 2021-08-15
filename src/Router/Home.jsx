@@ -7,7 +7,7 @@ import Sound from "../Hooks/Sound";
 const Home = () => {
   return (
     <Sound>
-      <main id="main" data-swipe-threshold="100">
+      <main id="main">
         <Timer />
       </main>
       <Settings />

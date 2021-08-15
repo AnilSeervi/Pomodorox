@@ -1,5 +1,16 @@
 {
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "name": "pomodorox",
+  "homepage": "https://pomodorox.pages.dev",
+  "license": "MIT",
+  "author": "Anil Seervi",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AnilSeervi/Pomodorox.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AnilSeervi/Pomodorox/issues"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
