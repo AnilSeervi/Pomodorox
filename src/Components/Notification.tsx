@@ -26,9 +26,8 @@ const Notification = () => {
 			<FormControl variant="filled" sx={{ minWidth: 140 }}>
 				<Select
 					sx={{
-						padding: "10px 10px 10px",
-						".MuiSelect-select": {
-							padding: "0",
+						"& .MuiSelect-select": {
+							padding: "10px 10px 10px",
 						},
 					}}
 					value={index}

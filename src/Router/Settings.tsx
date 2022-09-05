@@ -72,8 +72,8 @@ const Settings = () => {
 				sx={{
 					"& .MuiPaper-root": {
 						backgroundImage: "none",
+						margin: "10px",
 					},
-					margin: 10,
 				}}
 				open={open}
 				keepMounted
