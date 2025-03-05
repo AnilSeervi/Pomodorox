@@ -4,6 +4,7 @@ import alarmDigital from "../sounds/alarmDigital.mp3"
 import alarmKitchen from "../sounds/alarmKitchen.mp3"
 import alarmWood from "../sounds/alarmWood.mp3"
 import chime from "../sounds/chime.mp3"
+import yowaimo from "../Satoru-Gojo-Yowai-Mo.mp3"
 
 export type Sound = {
 	text: string
@@ -35,4 +36,8 @@ export const sounds: Sound[] = [
 		text: "Notification",
 		audio: new Audio(notification),
 	},
+	{
+		text: "Yowai Mo",
+		audio: new Audio(yowaimo),
+	}
 ]
